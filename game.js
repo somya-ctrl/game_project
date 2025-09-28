@@ -5,10 +5,10 @@ canvas.width = 600;
 canvas.height = window.innerHeight;
 
 const roadImg = new Image();
-roadImg.src = "road.jpg";
+roadImg.src = "assets/road.jpg";
 
 const moto = new Image();
-moto.src = "moto.png";
+moto.src = "assets/moto.png";
 
 let imageX = 250, imageY = canvas.height - 150, imageWidth = 100, imageHeight = 150;
 let roadY = 0;
@@ -33,3 +33,21 @@ roadImg.onload = () => {
         animate();
     };
 };
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+
+const step = 30;
+
+leftBtn.addEventListener("click", () => {
+  if (imageX > 0) { 
+    imageX -= step; 
+  }
+});
+
+rightBtn.addEventListener("click", () => {
+  if (imageX < canvas.width - imageWidth) {
+    imageX += step;
+  }
+});
+
+
