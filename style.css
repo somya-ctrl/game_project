@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body{
     background-color: black;
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 #myCanvas{
     width: 500px;
@@ -20,17 +22,40 @@ body{
     width: 200px;
     height: 100%;
 }
-.controls {
+#gameOverContainer {
+  display: none;
   position: absolute;
-  bottom: 20px;
-  display: flex;
-  gap: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
 }
 
-.controls button {
-  padding: 10px 20px;
-  font-size: 20px;
+#gameOverMessage {
+  font-size: 40px;
+  margin-bottom: 24px;
+  color: black;
+  background: #FF0000;
+  padding: 20px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  border: 2px solid #fffbe6;
+}
+
+#playAgainBtn {
+  font-size: 24px;
+  padding: 14px 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #28a745 0%, #85e085 100%);
+  color: #fff;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s, transform 0.2s;
+}
+
+#playAgainBtn:hover {
+  background: linear-gradient(135deg, #218838 0%, #6fdc6f 100%);
+  transform: scale(1.05);
 }

@@ -6,18 +6,22 @@
       <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"
   />
-    <link rel="icon" type="image/x-icon" href="assets/fab_icon.png">
+    <link rel="icon" type="image/x-icon" href="fab_icon.png">
     <link rel="stylesheet" href="style.css">
-    <title>Racing Car</title>
+    <title>Racing car</title>
 </head>
 <body>
-    <canvas id="road"></canvas>
-    <div class="controls">
-    <button id="leftBtn">⬅️</button>
-    <button id="rightBtn">➡️</button>
-    </div>
-
+    <canvas id="left"></canvas>
+    <canvas id="myCanvas"></canvas>
+    <canvas id="right"></canvas>
+     
+<div id="gameOverContainer">
+  <div id="gameOverMessage"></div>
+  <button id="playAgainBtn">Play Again</button>
+</div>
     <script src="game.js"></script>
 </body>
 </html>
