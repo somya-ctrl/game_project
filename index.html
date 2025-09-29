@@ -11,15 +11,24 @@
   />
     <link rel="icon" type="image/x-icon" href="fab_icon.png">
     <link rel="stylesheet" href="style.css">
-    <title>Racing car</title>
+    <title>Racing Moto</title>
 </head>
 <body>
+     
+    
     <canvas id="left"></canvas>
     <canvas id="myCanvas"></canvas>
     <canvas id="right"></canvas>
-     
+    
 <div id="gameOverContainer">
   <div id="gameOverMessage"></div>
+  <div id="themeSelector">
+  <button class="themeBtn active" data-theme="default"><i class="fa-solid fa-tree"></i> Default</button>
+  <button class="themeBtn" data-theme="desert"><i class="fa-solid fa-sun"></i> Desert</button>
+  <button class="themeBtn" data-theme="snow"><i class="fa-solid fa-snowflake"></i> Snow</button>
+</div>
+
+
   <button id="playAgainBtn">Play Again</button>
 </div>
     <script src="game.js"></script>

@@ -58,3 +58,59 @@ body{
   background: linear-gradient(135deg, #218838 0%, #6fdc6f 100%);
   transform: scale(1.05);
 }
+
+
+#themeSelector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px; 
+  border: none;
+  background: linear-gradient(145deg, #444, #222);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.themeBtn:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+
+.themeBtn.active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.themeBtn[data-theme="default"].active {
+  background: linear-gradient(145deg, #28a745, #1c7430); 
+}
+
+.themeBtn[data-theme="desert"].active {
+  background: linear-gradient(145deg, #ffc107, #d39e00); 
+}
+
+.themeBtn[data-theme="snow"].active {
+  background: linear-gradient(145deg, #0dcaf0, #0a869e); 
+}
+
+
+.themeBtn i {
+  font-size: 18px;
+}
