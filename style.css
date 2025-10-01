@@ -4,10 +4,17 @@ body{
      display: flex;
     justify-content: center;
     align-items: center; 
-    background:url("");
+    background-color: #222;
     height: 100vh;
     overflow: hidden;
     position: relative;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ✅ removes scrollbars */
+  height: 100%;
+  width: 100%;
 }
 #myCanvas{
     width: 500px;
@@ -135,13 +142,8 @@ body{
 #startBtn:hover {
   background: #218838;
 }
- 
-
-
-@media (max-width: 900px) {
-    body {
-        flex-direction: column;
-    }
+ @media (max-width: 900px) {
+   
     #myCanvas, #right, #left {
         width: 100%;
         height: auto;
@@ -153,7 +155,7 @@ body{
         gap: 12px;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 500px){
     #themeSelector {
         flex-direction: column;
         gap: 8px;
@@ -162,8 +164,7 @@ body{
         display: flex;
         gap: 20px;
         position: absolute;
-        display:none;
-        bottom: 20px;
+        bottom:60px;
         left: 50%;
         transform: translateX(-50%);
     } 

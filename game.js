@@ -167,14 +167,13 @@ function draw() {
         ctxL.drawImage(leftImg, 0, backgroundY - canvasL.height, canvasL.width, canvasL.height);
     }
     if (img.complete) {
-        ctx.drawImage(img, 0, backgroundY, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, backgroundY - canvas.height, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, backgroundY, canvas.width, img.height);
+        ctx.drawImage(img, 0, backgroundY - img.height, canvas.width, img.height);
     }
     
     if (moto.complete) {
         ctx.drawImage(moto, imageX, imageY, imageWidth, imageHeight);
-        // ctx.strokeStyle = "black";  
-        // ctx.strokeRect(imageX, imageY, imageWidth, imageHeight);
+        
     }
     
     // Draw pause instruction at fixed position
@@ -455,8 +454,7 @@ function drawObstacles() {
         const obs = obstacles[i];
         if (obs.img.complete){
             ctx.drawImage(obs.img, obs.x, obs.y, obs.width, obs.height);
-            // ctx.strokeStyle = "black";
-            // ctx.strokeRect(obs.x, obs.y, obs.width, obs.height);
+            
         }else {
             ctx.fillStyle = "red";
             ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
@@ -471,7 +469,6 @@ function checkCollision(rect1, rect2) {
         rect1.y + rect1.height - 19 >= rect2.y
     );
 }
-
 function checkOverlap(rect1, rect2) {
     return (
         rect1.x < rect2.x + rect2.width &&
@@ -480,7 +477,6 @@ function checkOverlap(rect1, rect2) {
         rect1.y + rect1.height > rect2.y
     );
 }
-
 function isPositionValid(x, y, width, height) {
     // Check against obstacles
     for (let i = 0; i < obstacles.length; i++) {
@@ -713,3 +709,4 @@ playAgainBtn.addEventListener("click", () => {
     }
     update();
 });
+

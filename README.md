@@ -69,3 +69,6 @@ Dodge obstacles, collect power-ups, and race as far as you can to achieve the hi
 ## 📝 License
 
 This project is open-source. You can use, modify, and distribute it freely.
+
+## Deployed link
+https://game-project-woad.vercel.app/
