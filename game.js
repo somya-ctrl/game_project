@@ -7,13 +7,13 @@ const themes = {
     },
     desert: {
         road: "assets/road.jpg",
-        left: "assets/left3.jpg",
-        right: "assets/right3.jpg"
+        left: "assets/left2.jpg",
+        right: "assets/right2.jpg"
     },
     snow: {
         road: "assets/road.jpg",
-        left: "assets/left2.jpg",
-        right: "assets/right2.jpg"
+        left: "assets/left3.jpg",
+        right: "assets/right3.jpg"
     }
 };
 
@@ -50,6 +50,7 @@ const crashSound = new Audio("sounds/crash.mp3");
 const coinSound = new Audio("sounds/coin.mp3");
 
 engineSound.loop = true;
+
 
 let gameOver = false; 
 let gamePaused = false;
