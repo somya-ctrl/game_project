@@ -4,7 +4,7 @@ body{
      display: flex;
     justify-content: center;
     align-items: center; 
-    background-color: black;
+    background:url("");
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -20,6 +20,9 @@ body{
 #left{
     width: 200px;
     height: 100%;
+}
+#controls {
+  display:none;
 }
 #gameOverContainer {
   display: none;
@@ -114,6 +117,25 @@ body{
 .themeBtn i {
   font-size: 18px;
 }
+#startbtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(3, 1, 1, 0.3);
+}
+#startBtn:hover {
+  background: #218838;
+}
+ 
 
 
 @media (max-width: 900px) {
@@ -135,5 +157,23 @@ body{
     #themeSelector {
         flex-direction: column;
         gap: 8px;
+    }
+    #controls {
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        display:none;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    } 
+       #controls button {
+        font-size: 24px;
+        padding: 12px 20px;
+        border-radius: 50%;
+        background: rgba(39, 38, 38, 0.5);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 }

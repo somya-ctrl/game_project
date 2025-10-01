@@ -1,4 +1,3 @@
-// Define themes first before using them
 const themes = {
     default: {
         road: "assets/road.jpg",
@@ -51,7 +50,7 @@ const coinSound = new Audio("sounds/coin.mp3");
 
 engineSound.loop = true;
 
-
+let gameStarted = false;
 let gameOver = false; 
 let gamePaused = false;
 let engineSoundPlaying = false;
@@ -75,6 +74,17 @@ let imageY = canvas.height - 120;
 const imageWidth = 40;
 const imageHeight = 80;
 const movespeed = 4;
+const startbtn = document.getElementById("startbtn");
+
+startbtn.addEventListener("click", () => {
+    gameStarted = true;
+    startbtn.style.display = "none"; // hide button after starting
+    if (window.innerWidth <= 768) {
+        document.getElementById("controls").style.display = "flex";
+    }
+    update(); // start the game loop
+});
+
 
 const img = new Image();
 img.src = themes.default.road;
@@ -116,10 +126,6 @@ let shieldTimeRemaining = 0;
 const obstacleWidth = 40;
 const obstaclesHeight = 80;
 const obstacles = [];
-
-
-
-
 setInterval(() => {
     if(speedObstacle < 8){
         speedObstacle += 1;    
@@ -347,8 +353,6 @@ function update() {
     } else {
         currentObstacleSpeed = Math.max(baseObstacleSpeed, 1); // Ensure minimum speed of 1
     }
-
-       
     const leftBoundary = 60;
     const rightBoundary = 445 - imageWidth;
     
@@ -531,6 +535,7 @@ function moveObstacles(){
                 gameOverMessage.innerHTML = score > highScore
                     ? `Game Over!<br>Your score: ${score}<br>New High Score!`
                     : `Game Over!<br>Your score: ${score}<br>High Score: ${highScore}`;
+                document.getElementById("controls").style.display = "none";
 
                 return;
             }
@@ -656,15 +661,22 @@ if (checkCollision(
     continue;
 
 }
-       
-        if (p.y > canvas.height) {
+       if (p.y > canvas.height) {
             powerups.splice(i, 1);
             i--;
         }
     }
 }
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
 
+if (leftBtn && rightBtn) {
+  leftBtn.addEventListener("touchstart", () => leftPressed = true);
+  leftBtn.addEventListener("touchend", () => leftPressed = false);
 
+  rightBtn.addEventListener("touchstart", () => rightPressed = true);
+  rightBtn.addEventListener("touchend", () => rightPressed = false);
+}
 const themeButtons = document.querySelectorAll(".themeBtn");
 themeButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -678,7 +690,6 @@ themeButtons.forEach(button => {
         rightImg.src = themes[selectedTheme].right;
     });
 });
-
 const playAgainBtn = document.getElementById("playAgainBtn");
 playAgainBtn.addEventListener("click", () => {
     score = 0;
@@ -697,6 +708,8 @@ playAgainBtn.addEventListener("click", () => {
     distanceSinceLastBoost = 0;
     boostCooldown = 0;
     document.getElementById("gameOverContainer").style.display = "none";
+    if (window.innerWidth <= 768) {
+        document.getElementById("controls").style.display = "flex";
+    }
     update();
 });
-update();
